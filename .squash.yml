@@ -1,8 +1,9 @@
 deployments:
   default:
     dockerimage: python:latest
+    shell: fish
     build_steps:
-      - apt-get update && apt-get install -y libssl-dev libpq-dev git build-essential libfontconfig1 libfontconfig1-dev curl
+      - apt-get update && apt-get install -y libssl-dev libpq-dev git build-essential libfontconfig1 libfontconfig1-dev curl fish
       - RUN bash -c "curl -sL https://deb.nodesource.com/setup_8.x | bash -"
       - apt install -y nodejs
       - cd /code
